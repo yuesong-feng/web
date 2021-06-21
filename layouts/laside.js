@@ -6,15 +6,17 @@ export default class Laside extends React.Component {
     super(props);
   }
   render() {
+    const linkStyle = { textDecoration:'none', color: '#fff'}
     return (
       <div className="laside">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" style={linkStyle}>主页</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" style={linkStyle}>关于我们</Link>
           </li>
+
         </ul>
       </div>
     );

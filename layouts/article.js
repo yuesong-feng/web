@@ -7,15 +7,17 @@ export default class Article extends React.Component {
   }
   render() {
     return (
-      <div className="article">
-        <div className="article-img"></div>
-        <Link to="/about" style={{ textDecoration:'none', color: '#fff'}}>
+      <Link
+        to={`/content/${this.props.title}`}
+        style={{ textDecoration: "none", color: "#fff" }}
+      >
+        <div className="article">
+          <div className="article-img"></div>
           <h3>{this.props.title}</h3>
-        </Link>
-
-        <span>{this.props.author}</span>
-        <span>{this.props.content}</span>
-      </div>
+          <span>{this.props.author}</span>
+          <span>{this.props.content}</span>
+        </div>
+      </Link>
     );
   }
 }

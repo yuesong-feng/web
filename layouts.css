@@ -46,6 +46,17 @@ body,
   width: 220px;
   background: rgba(255, 255, 255, 0.15);
 }
+.laside ul {
+  border: turquoise 1px solid;
+  padding: 0;
+}
+.laside li {
+  border: firebrick 1px solid;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  list-style: none;
+}
 
 .main {
   background: rgba(255, 255, 255, 0.1);
