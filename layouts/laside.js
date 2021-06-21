@@ -16,6 +16,9 @@ export default class Laside extends React.Component {
           <li>
             <Link to="/about" style={linkStyle}>关于我们</Link>
           </li>
+          <li>
+            <Link to="/add" style={linkStyle}>添加文章</Link>
+          </li>
 
         </ul>
       </div>

@@ -4,7 +4,10 @@ import Article from "./article.js";
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
+    this.allArticles = [];
     this.state = { articles: [] };
+  }
+  componentDidMount() {
     fetch(
       "https://service-afkj7z8q-1300477814.gz.apigw.tencentcs.com/release/articles"
     )
@@ -12,7 +15,7 @@ export default class Main extends React.Component {
         return res.json();
       })
       .then((data) => {
-        let fetchArticles = data.map((value, index) => {
+        this.allArticles = data.map((value, index) => {
           return (
             <Article
               key={index}
@@ -22,12 +25,13 @@ export default class Main extends React.Component {
             />
           );
         });
+      })
+      .then(() => {
         this.setState((state) => ({
-          articles: fetchArticles,
+          articles: this.allArticles,
         }));
       });
   }
-  componentDidMount() {}
   render() {
     return (
       <div className="main">
@@ -41,13 +45,13 @@ export default class Main extends React.Component {
 
         {this.state.articles}
 
-        <div className="article-nav">
+        {/* <div className="article-nav">
           <button>1</button>
           <button>2</button>
           <button>3</button>
           <button>4</button>
           <button>5</button>
-        </div>
+        </div> */}
       </div>
     );
   }

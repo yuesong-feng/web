@@ -6,6 +6,7 @@ import Raside from "./layouts/raside.js";
 import Main from "./layouts/main.js";
 import About from "./layouts/about";
 import Content from "./layouts/content";
+import Add from './layouts/add'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route exact path="/" component={Main} />
           <Route path="/about" component={About} />
           <Route path="/content/:title" component={Content} />
+          <Route path="/add" component={Add} />
         </Switch>
         <Raside />
       </div>
